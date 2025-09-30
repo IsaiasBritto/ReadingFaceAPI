@@ -67,5 +67,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'ReadingFaceAPI'
-          slot-name: 'Production'
+          slot-name: 'production'
           

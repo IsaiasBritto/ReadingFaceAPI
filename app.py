@@ -25,7 +25,7 @@ uploaded_file = st.file_uploader("Escolha uma imagem", type=["jpg", "jpeg", "png
 if uploaded_file is not None:
     # Mostrar imagem original
     image = Image.open(uploaded_file)
-    st.image(image, caption="Imagem carregada", use_column_width=True)
+    st.image(image, caption="Imagem carregada", use_container_width=True)
 
     # Botão para enviar à API
     if st.button("🔍 Detectar rostos"):
@@ -65,6 +65,6 @@ if uploaded_file is not None:
                     st.write(f"🙈 Oclusão: {attrs['occlusion']}")
                     st.write("---")
 
-                st.image(image, caption="Rostos detectados", use_column_width=True)
+                st.image(image, caption="Rostos detectados", use_container_width=True)
         else:
             st.error(f"Erro na chamada à API: {response.status_code} - {response.text}")
