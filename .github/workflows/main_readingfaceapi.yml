@@ -84,3 +84,4 @@ jobs:
       - name: Post-deploy status
         run: |
           echo "Deployed to ${{ secrets.AZURE_WEBAPP_NAME }} (subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }})"
+ 
