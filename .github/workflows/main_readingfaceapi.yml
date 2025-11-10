@@ -72,6 +72,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Configure startup command on Azure
+        run: |
+          az webapp config set \
+            --resource-group rg-demo-faceapi \
+            --name ReadingFaceAPI \
+            --startup-file "gunicorn --bind=0.0.0.0 --timeout 600 app:app"          
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
